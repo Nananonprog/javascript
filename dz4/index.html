@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .image-container {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 10px;
+    }
+
+    .selector{
+        margin-top: 20px;
+        padding-left: 50px;
+    }
+  </style>
+</head>
+<body>
+  <div class="image-container">
+    <img src="image/2.jpg" id="image1" width="160" height="120">
+    <img src="image/3.jpg" id="image2" width="160" height="120">
+    <img src="image/4.jpg" id="image3" width="160" height="120">
+  </div>
+  <div class="selector">
+    <input type="number" id="input1" placeholder="Введите номер картинки">
+    <input type="number" id="input2" placeholder="Введите номер картинки">
+    <button onclick="swapImages()">Поменять</button>
+  </div>
+
+  <script>
+    function swapImages() {
+      const input1Value = parseInt(document.getElementById('input1').value);
+      const input2Value = parseInt(document.getElementById('input2').value);
+      if (input1Value >= 1 && input1Value <= 3 && input2Value >= 1 && input2Value <= 3) {
+        const image1 = document.getElementById('image' + input1Value);
+        const image2 = document.getElementById('image' + input2Value);
+        const tempSrc = image1.src;
+        image1.src = image2.src;
+        image2.src = tempSrc;
+      } else {
+        alert("Укажите верное значение");
+      }
+    }
+  </script>
+</body>
+</html>
