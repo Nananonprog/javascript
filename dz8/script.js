@@ -9,7 +9,7 @@ function load(){
             let ul = document.querySelector("#list");
             let html = data.map(function(item){
                 if(item.completed){
-                return "<li>" + "Пользователь: " +  item.userId + "выполнил задачу № " + item.id + " (" + item.title + ")" +  "</li>";}
+                return "<li>" + "Пользователь: " +  item.userId + " выполнил задачу № " + item.id + " (" + item.title + ")" +  "</li>";}
                 
 
             })
